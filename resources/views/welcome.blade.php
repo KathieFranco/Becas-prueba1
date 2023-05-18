@@ -38,6 +38,45 @@
                     </svg>
                 </div>
 
+                <div>
+                    <h2>Becas</h2>
+                    @php
+                        $datosBecas = $becas;
+                    @endphp
+
+                    @foreach ($datosBecas as $beca)
+                    @isset($beca)
+                    <h3>{{$beca->nombre}}</h3>
+                    @isset($beca->promedio)
+                    <p>Promedio minimo:{{$beca->promedio}}</p>
+                    @endisset
+                    @isset($beca->sexo)
+                    <p>Beca para:{{$beca->sexo}}</p>
+                    @endisset
+                    @isset($beca->semestre)
+                    <p>Minimo semestre:{{$beca->semestre}}</p>
+                    @endisset
+                    @isset($beca->edad)
+                    <p>Edad minima:{{$beca->edad}}</p>
+                    @endisset
+                    @isset($beca->carrera)
+                    <p>Carrera:{{$beca->carrera}}</p>
+                    @endisset
+                    <p>{{$beca->descripcion}}</p>
+                    @endisset
+                    @isset($beca->enlace)
+                    <a>{{$beca->enlace}}</a>
+                    @endisset
+                    <br>
+                    <a href="/{{$beca->id}}/edit"><button>Editar</button></a>
+                    <br>
+                    @endforeach
+
+                </div>
+                <div class="col-sm-12">
+                    <a href="/create"><button>Añadir Beca</button></a>
+                </div>
+
                 <div class="mt-16">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                         <a href="https://laravel.com/docs" class="scale-100 p-6 bg-white from-gray-700/50 via-transparent rounded-lg shadow-2xl shadow-gray-500/20 flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">

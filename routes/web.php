@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BecaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Route::prefix('/', function () {
+   return view('welcome');
 });
 
 Route::middleware([
@@ -26,3 +29,11 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/', [BecaController::class, 'index'])->name('welcome');
+Route::get('/create', [BecaController::class, 'create'])->name('becas.create');
+Route::post('/', [BecaController::class, 'store'])->name('becas.store');
+Route::get('/{beca}', [BecaController::class, 'show'])->name('becas.show');
+Route::get('/{beca}/edit', [BecaController::class, 'edit'])->name('becas.edit');
+Route::patch('/{beca}', [BecaController::class, 'update'])->name('becas.show');
+Route::delete('/{beca}', [BecaController::class, 'destroy'])->name('welcome');
