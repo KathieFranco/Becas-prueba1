@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class BecaController extends Controller
 {
+    /**Mostrar los datos aparte
+     */
+    public function listado()
+    {
+        $becas = Beca::all(); // Obtener todos los registros de la tabla "becas"
+
+        return view('dashboard', compact('becas'));
+    }
+     
     /**
      * Display a listing of the resource.
      */

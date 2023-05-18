@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BecaController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,11 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/tips', function () {
+        return view('tips');
+    })->name('tips');
 });
+
 
 Route::get('/', [BecaController::class, 'index'])->name('welcome');
 Route::get('/create', [BecaController::class, 'create'])->name('becas.create');
@@ -37,3 +42,6 @@ Route::get('/{beca}', [BecaController::class, 'show'])->name('becas.show');
 Route::get('/{beca}/edit', [BecaController::class, 'edit'])->name('becas.edit');
 Route::patch('/{beca}', [BecaController::class, 'update'])->name('becas.show');
 Route::delete('/{beca}', [BecaController::class, 'destroy'])->name('welcome');
+
+Route::post('/tips', [CommentController::class, 'store'])->name('tips');
+Route::get('/tips', [CommentController::class, 'index'])->name('tips');
