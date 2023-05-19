@@ -62,3 +62,8 @@
     font-size: 16px;
   }
   
+  #mi-contenedor {
+    /* Estilos específicos para el contenedor */
+    color: #407ff5;
+    background-color: #f4f4f4;
+  }

@@ -13,7 +13,7 @@ class BecaController extends Controller
     {
         $becas = Beca::all(); // Obtener todos los registros de la tabla "becas"
 
-        return view('dashboard', compact('becas'));
+        return view('dashboard')->with('becas',$becas);
     }
      
     /**

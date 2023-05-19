@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BecaController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\FavoritoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,9 @@ Route::middleware([
     Route::get('/tips', function () {
         return view('tips');
     })->name('tips');
+    Route::get('/user/favs', function () {
+        return view('profile.favoritos');
+    })->name('profile.favoritos');
 });
 
 
@@ -45,3 +49,6 @@ Route::delete('/{beca}', [BecaController::class, 'destroy'])->name('welcome');
 
 Route::post('/tips', [CommentController::class, 'store'])->name('tips');
 Route::get('/tips', [CommentController::class, 'index'])->name('tips');
+Route::get('/dashboard', [BecaController::class, 'listado'])->name('dashboard');
+
+Route::resource('/user/favs', FavoritoController::class);
