@@ -17,7 +17,6 @@
         @php
             $datosBecas = $becas;
         @endphp
-
         @foreach ($datosBecas as $beca)
         @isset($beca)
         <br>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BecaController;
+use App\Http\Controllers\FilterController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FavoritoController;
 
@@ -52,3 +53,6 @@ Route::get('/tips', [CommentController::class, 'index'])->name('tips');
 Route::get('/dashboard', [BecaController::class, 'listado'])->name('dashboard');
 
 Route::resource('/user/favs', FavoritoController::class);
+
+Route::post('/dashboard/filtrar', [BecaController::class, 'filtrar'])->name('dashboard.filtrar');
+Route::get('/dashboard/reset', [BecaController::class, 'reset'])->name('dashboard.reset');
