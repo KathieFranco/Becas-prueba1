@@ -1,0 +1,38 @@
+.forma {
+    width: 95%;
+    background-color: #86b5eb;
+    border-radius: 10px;
+    border: 1px solid #5130e7;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.tipoB {
+    color: #000000;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.text {
+    color: #303030;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.textol {
+    color: #0300aa;
+    text-decoration: none;
+    text-decoration: underline;
+}
+
+.textol:hover {
+    text-decoration: underline;
+}
+.fondo {
+    background-color: #5946b2;
+    padding: 20px;
+  }
+  

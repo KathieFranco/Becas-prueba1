@@ -1,0 +1,94 @@
+.fondo {
+    background-color: #6976eb;
+    padding: 20px;
+  }
+  
+  .forma {
+    width: 100%;
+    background-color: #698ed2;
+    border-radius: 5px;
+    border: 1px solid #4675b2;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .favorito-editar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .favorito {
+    color: #ffd700;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .favorito:hover {
+    color: #ffdf00;
+  }
+  
+  .editar {
+    background-color: #92c5fc;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .nombeca {
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .texto {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  .textol {
+    font-size: 20px;
+    text-decoration: underline;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .pencil-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .pencil-icon {
+    font-size: 20px;
+  }
+  
+  .nuevabeca {
+    background-color: #2925e6;
+    color: #FFF;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+
+  }
+  
+  .nuevabeca:hover {
+    background-color: #183eeb;
+  }
+  
