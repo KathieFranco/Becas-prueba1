@@ -7,13 +7,32 @@ use Illuminate\Http\Request;
 
 class BecaController extends Controller
 {
+    public function filtrar(Request $request){
+    
+        $becas = Beca::all();
+        $tiposSeleccionados = $request->input('tipo', []);
+        $becasFiltradas = Beca::whereJsonContains('tipo', $tiposSeleccionados)->get();
+
+        return view('dashboard')->with([
+            'becasFiltradas' => $becasFiltradas,
+            'tipo' => $tiposSeleccionados,
+        ]);
+    }
+
+    public function reset()
+    {
+    return redirect()->route('dashboard');
+    }
+
+
     /**Mostrar los datos aparte
      */
     public function listado()
     {
-        $becas = Beca::all(); // Obtener todos los registros de la tabla "becas"
+        $becas = Beca::all();
+        $becasFiltradas =  collect();
 
-        return view('dashboard')->with('becas',$becas);
+        return view('dashboard', compact('becas', 'becasFiltradas'));
     }
      
     /**
@@ -22,7 +41,8 @@ class BecaController extends Controller
     public function index()
     {
         $becas = Beca::all();
-        return view('welcome')->with('becas', $becas);
+
+        return view('welcome', compact('becas'));
     }
 
     /**
