@@ -3,16 +3,19 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ asset('estilo/estiloeditar.css') }}">
 
         <title>BKT Encuentra tu beca</title>
-        <link rel="stylesheet" href="styles.css" type="text/css">
+
     </head>
-    <body>
+    <body class="fondo">
         <div>
+            
             @php
                 $tipo = json_decode($beca->tipo);
             @endphp
             <div class="container">
+            <h2 class="titulo">Modo edición</h2>
                 <form action="/{{$beca->id}}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('patch')

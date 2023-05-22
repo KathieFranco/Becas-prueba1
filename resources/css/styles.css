@@ -40,16 +40,18 @@
     font-size: 16px;
   }
   
-  button[type="submit"]:hover {
-    background-color: #45a049;
+  .button[type="submit"]:hover {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
   }
   
   .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
+    background-color: #c00b0b;
+    border: 1px solid #3473d3;
     border-radius: 5px;
   }
   
@@ -66,4 +68,9 @@
     /* Estilos específicos para el contenedor */
     color: #407ff5;
     background-color: #f4f4f4;
+  }
+  
+ .header {
+    font-size: 50px;
+    color: #dd1111;
   }

@@ -3,13 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ asset('estilo/estiloform.css') }}">
 
         <title>BKT Encuentra tu beca</title>
         <link rel="stylesheet" href="styles.css" type="text/css">
     </head>
-    <body>
+    <body class="fondo">
         <div>
             <div class="container">
+                <h2 class="titulo">Registrar Beca</h2>
                 <form action="/" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">

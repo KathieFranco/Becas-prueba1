@@ -1,0 +1,94 @@
+/*Tips*/
+.header {
+    font-size: 50px;
+    color: #7846eb;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    box-shadow: 2px 2px 4px rgba(12, 4, 4, 0.712);
+    background-color: #a7c6f5;
+    font-weight: bold;
+
+  }
+  .header:hover {
+    color: #ff0000; 
+  }
+  .container {
+    width: 95%;
+    max-width: 1500px; 
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 20px; 
+    border: 1px solid #3473d3;
+    border-radius: 5px;
+    background-color: rgba(3, 50, 112, 0.123);
+  }
+
+  .text{
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: center;
+  }
+  .ttex{
+    display: flex;
+    font-size: 15px;
+    justify-content: center;
+    align-items: left;
+
+  }
+  .tareatex{
+    width: 400px; 
+    height: 200px;
+    color: #0b0ff7;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #2912f8; 
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .button[type="submit"] {
+    background-color: #3207a8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    align-items: center;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+  }
+  .button:hover{
+    color: #ff0000;
+  }
+  .comentario{
+    color: rgb(0, 146, 19);
+    border: 2px solid #378ea3;
+    border-radius: 6px;
+    background-color: rgba(53, 128, 226, 0.3);
+    justify-content: center;
+    
+    
+    
+
+
+  }
+
+  .titulotip{
+    color: rgb(47, 4, 163);
+    font-weight: bold;
+
+  }
+  .fondo {
+    background-color: #6976eb;
+    padding: 20px;
+  }
+
+
+
+/*Favoritos*/

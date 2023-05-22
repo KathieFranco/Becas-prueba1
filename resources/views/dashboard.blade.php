@@ -3,10 +3,17 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Becas') }}
         </h2>
-        
     </x-slot>
+    <title>BKT - Becas para todes</title>
+    
+    <link rel="stylesheet" href="{{ asset('estilo/estilobecas.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-M8/Z6rZlbu1ZN3ZWaP8Q7Lssg3o+TJe4zj0wk9Xj47TnTqL9zC5i09hRleesZGKp86LrsqVHXaD+yfOoB7tZ9Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <div style="background-color: #f4f4f4; padding: 10px; border-radius: 5px; margin-left: 10%; ">
+    <div class="fondo">
+        <div>
+            <a href="/create"><button class="nuevabeca">Añadir Beca</button></a>
+        </div>
+    
         @php
             $datosBecas = $becas;
         @endphp
@@ -14,47 +21,54 @@
         @foreach ($datosBecas as $beca)
         @isset($beca)
         <br>
-        <h2><b>{{$beca->nombre}}</b></h2>
-        @isset($beca->promedio)
-        <p>Promedio minimo:{{$beca->promedio}}</p>
-        @endisset
-        @isset($beca->sexo)
-        <p>Beca para:{{$beca->sexo}}</p>
-        @endisset
-        @isset($beca->semestre)
-        <p>Minimo semestre:{{$beca->semestre}}</p>
-        @endisset
-        @isset($beca->edad)
-        <p>Edad minima:{{$beca->edad}}</p>
-        @endisset
-        @isset($beca->carrera)
-        <p>Carrera:{{$beca->carrera}}</p>
-        @endisset
-        <p>{{$beca->descripcion}}</p>
-        @endisset
-        @isset($beca->enlace)
-        <a>{{$beca->enlace}}</a>
-        @endisset
-        <a href="/{{$beca->id}}/edit"><button style="background-color: #92C5FC; color: #fff; border: none; padding: 8px 12px; border-radius: 3px; cursor: pointer;">Editar</button></a>
-        <form action="/user/favs" method="post">
-            @csrf
-            <input type="text" name="beca_id" value="{{$beca->id}}" hidden>
-            <input type="text" name="user_id" value="{{Auth::user()->id}}" hidden>
-            <button type="submit" style="background-color: #92C5FC; color: #fff; border: none; padding: 8px 12px; border-radius: 3px; cursor: pointer; float:right ;">Favorito</button>
-        </form>
-        <br>
-        @endforeach
+        <div class="forma">
+            <a href="/{{$beca->id}}/edit" class="editar">
+                <span class="pencil-icon">&#9998;</span>
+            </a>
+            <form action="/user/favs" method="post">
+                @csrf
+                <button class="favorito" type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 100 100">
+                        <polygon points="50 0 64 36 100 36 70 59 82 100 50 75 18 100 30 59 0 36 36 36" fill="yellow" stroke="black" stroke-width="2"/>
+                    </svg>
+                </button>
+                <input type="text" name="beca_id" value="{{$beca->id}}" hidden>
+                <input type="text" name="user_id" value="{{Auth::user()->id}}" hidden>
+            </form>
+            <h2 class="nombeca"><b> {{$beca->nombre}}</b></h2>
+            @isset($beca->promedio)
+            <p class="texto">Promedio mínimo: {{$beca->promedio}}</p>
+            @endisset
+            @isset($beca->sexo)
+            <p class="texto">Beca para: {{$beca->sexo}}</p>
+            @endisset
+            @isset($beca->semestre)
+            <p class="texto">Mínimo semestre: {{$beca->semestre}}</p>
+            @endisset
+            @isset($beca->edad)
+            <p class="texto">Edad mínima: {{$beca->edad}}</p>
+            @endisset
+            @isset($beca->carrera)
+            <p class="texto">Carrera: {{$beca->carrera}}</p>
+            @endisset
+            <p class="texto"> {{$beca->descripcion}}</p>
+            @endisset
+            @isset($beca->enlace)
+            <a class="textol" href="{{ $beca->enlace }}">Enlace a la página de inscripción</a>
+            @endisset
+            </div>
 
-        <div class="col-sm-12">
-            <a href="/create"><button>Añadir Beca</button></a>
-        </div>
-    </div>
+            <br>
+            @endforeach
+            </div>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+        <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <x-welcome />
             </div>
         </div>
     </div>
 </x-app-layout>
+
+                    
