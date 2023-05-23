@@ -40,7 +40,7 @@
             <form action="/user/favs/{{$beca->id}}" method="post">
                 @csrf
                 @method('DELETE')
-                <input type="submit" value="Eliminar">
+                <input  class="elimina" type="submit" value="Eliminar">
             </form>
         @endforeach
 

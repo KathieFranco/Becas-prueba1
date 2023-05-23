@@ -12,7 +12,7 @@
 
     </head>
     <body class="fondo">
-        <a class="textol" href="/dashboard">Inicio</a>
+        <a class="regreso" href="/dashboard">Inicio</a>
         <div class="forma">
         <h1 class="titulo">Becas</h1>
             @isset($beca)

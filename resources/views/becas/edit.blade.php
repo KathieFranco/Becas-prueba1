@@ -10,7 +10,7 @@
     </head>
     <body class="fondo">
         <div>
-            <a class="textol" href="/dashboard">Inicio</a>
+            <a class="regreso" href="/dashboard">Inicio</a>
             @php
                 $tipo = json_decode($beca->tipo);
             @endphp

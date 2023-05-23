@@ -69,3 +69,20 @@
   .fondo{
     background-color: #D8D1FF;
   }
+
+  .regreso {
+    background-color: #8207d4;
+    color: #FFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
+    margin-left: 15px;
+    margin-top: 50px;
+  }
+  
+  .regreso:hover {
+    background-color: #aa37c7;
+    text-decoration: underline;
+  }

@@ -24,6 +24,7 @@
     background-color: rgba(3, 50, 112, 0.123);
   }
 
+
   .text{
     font-size: 20px;
     font-weight: bold;
@@ -72,10 +73,8 @@
     border-radius: 6px;
     background-color: rgba(53, 128, 226, 0.3);
     justify-content: center;
-    
-    
-    
-
+    flex-grow: 1;
+    margin-right: 10px;
 
   }
 
@@ -88,7 +87,21 @@
     background-color: #6976eb;
     padding: 20px;
   }
+    .eliminar {
+      
+      background-color: #d41103;
+      color: white;
+      margin-top: 0;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 16px;
+    }
 
+    .eliminar:hover {
+      background-color: #e53935;
+    }
 
 
 /*Favoritos*/

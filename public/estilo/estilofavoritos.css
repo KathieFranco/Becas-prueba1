@@ -6,6 +6,7 @@
     padding: 20px;
     margin-bottom: 20px;
     position: relative;
+    
 }
 
 .tipoB {
@@ -20,12 +21,14 @@
     font-size: 16px;
     margin-top: 5px;
     margin-bottom: 5px;
+    
 }
 
 .textol {
     color: #0300aa;
     text-decoration: none;
     text-decoration: underline;
+    
 }
 
 .textol:hover {
@@ -36,3 +39,17 @@
     padding: 20px;
   }
   
+  
+  .elimina {
+    background-color: #c20f02;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .elimina:hover {
+    background-color: #e53935;
+  }

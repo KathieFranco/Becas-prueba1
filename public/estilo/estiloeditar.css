@@ -81,3 +81,20 @@
     border: 1px solid rgb(29, 118, 235);
     background-color: #75b5c591;
     }
+
+    .regreso {
+      background-color: #8207d4;
+      color: #FFF;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      flex: 1;
+      margin-left: 15px;
+      margin-top: 50px;
+    }
+    
+    .regreso:hover {
+      background-color: #0A2861;
+      text-decoration: underline;
+    }

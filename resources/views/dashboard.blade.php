@@ -41,7 +41,7 @@
             </div>
         </div>
         @if ($becasFiltradas->isNotEmpty())
-            <h2>Becas coincidentes:</h2>
+            <h2 class="titulo">Becas coincidentes:</h2>
             <br>
             @foreach ($becasFiltradas as $beca)
             <div class="forma">

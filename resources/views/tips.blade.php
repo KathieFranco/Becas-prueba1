@@ -44,7 +44,7 @@
                 <form action="{{ route('comment.destroy', $comment->id) }}" method="post">
                     @csrf
                     @method('DELETE')
-                    <input type="submit" value="Eliminar">
+                    <input class="eliminar" type="submit" value="Eliminar">
                 </form>
                 @endcan
             @endisset

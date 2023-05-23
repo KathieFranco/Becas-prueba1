@@ -91,6 +91,17 @@
   .nuevabeca:hover {
     background-color: #183eeb;
   }
+  .titulo{
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #001aff;
+    text-shadow: 2px 2px 4px rgba(26, 3, 53, 0.39);
+    margin-bottom: 20px;
+    border: 1px solid rgb(29, 118, 235);
+    background-color: #75b5c591;
+    margin-top: 25px;
+    }
   
   /* .checkbox-row input[type="checkbox"] {
     display: none;
