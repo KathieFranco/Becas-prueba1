@@ -37,6 +37,11 @@
             @isset($beca->enlace)
             <a class="textol" href="{{ $beca->enlace }}">Enlace a la página de inscripción</a>
             @endisset
+            <form action="/user/favs/{{$beca->id}}" method="post">
+                @csrf
+                @method('DELETE')
+                <input type="submit" value="Eliminar">
+            </form>
         @endforeach
 
         </div>

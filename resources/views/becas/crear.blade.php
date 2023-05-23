@@ -10,6 +10,7 @@
     </head>
     <body class="fondo">
         <div>
+            <a class="textol" href="/dashboard">Inicio</a>
             <div class="container">
                 <h2 class="titulo">Registrar Beca</h2>
                 <form action="/" method="post" enctype="multipart/form-data">

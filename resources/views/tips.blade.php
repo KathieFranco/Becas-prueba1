@@ -40,6 +40,13 @@
         @foreach ($datosTips as $comment)
             @isset($comment)
             <h3 class="comentario">{{$comment->body}}</h3><br>
+                @can('admin-only')
+                <form action="{{ route('comment.destroy', $comment->id) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="Eliminar">
+                </form>
+                @endcan
             @endisset
         @endforeach
         </div>

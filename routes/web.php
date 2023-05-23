@@ -19,8 +19,8 @@ use App\Http\Controllers\FavoritoController;
 
 
 
-Route::prefix('/', function () {
-   return view('welcome');
+Route::get('/', function () {
+    return view('welcome');
 });
 
 Route::middleware([
@@ -50,9 +50,14 @@ Route::delete('/{beca}', [BecaController::class, 'destroy'])->name('welcome');
 
 Route::post('/tips', [CommentController::class, 'store'])->name('tips');
 Route::get('/tips', [CommentController::class, 'index'])->name('tips');
+Route::delete('/tips/{commet}', [CommentController::class, 'destroy'])->name('comment.destroy');
 Route::get('/dashboard', [BecaController::class, 'listado'])->name('dashboard');
 
+Route::prefix('dashboard')->group(function () {
+    Route::post('/user/favs', [FavoritoController::class, 'store'])->name('favorito.store');
+    Route::post('/filtrar', [BecaController::class, 'filtrar'])->name('dashboard.filtrar');
+});
 Route::resource('/user/favs', FavoritoController::class);
 
-Route::post('/dashboard/filtrar', [BecaController::class, 'filtrar'])->name('dashboard.filtrar');
 Route::get('/dashboard/reset', [BecaController::class, 'reset'])->name('dashboard.reset');
+Route::get('/dashboard/filtrar', [BecaController::class, 'listado'])->name('dashboard');

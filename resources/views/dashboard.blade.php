@@ -11,27 +11,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-M8/Z6rZlbu1ZN3ZWaP8Q7Lssg3o+TJe4zj0wk9Xj47TnTqL9zC5i09hRleesZGKp86LrsqVHXaD+yfOoB7tZ9Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <div class="fondo">
-        <div>
-            <a href="/create"><button class="nuevabeca">Añadir Beca</button></a>
-        </div>
+        @can('admin-only')
+            <div>
+                <a href="/create"><button class="nuevabeca">Añadir Beca</button></a>
+            </div>
+        @endcan
         <div class="mr-2">
             <div class="checkbox-row">
                 <form action="{{ route('dashboard.filtrar') }}" method="POST">
                     @csrf
                     <label>
-                        <input type="checkbox" name="tipo[]" value="deportiva"> Deportiva
+                        <input type="checkbox" name="tipo[]" value="deportiva" {{isset($tipo) && in_array('deportiva', $tipo) ? 'checked' : '' }}> Deportiva
                     </label>
                     <label>
-                        <input type="checkbox" name="tipo[]" value="intercambio"> Intercambio
+                        <input type="checkbox" name="tipo[]" value="intercambio" {{isset($tipo) && in_array('intercambio', $tipo) ? 'checked' : '' }}> Intercambio
                     </label>
                     <label>
-                        <input type="checkbox" name="tipo[]" value="sobresaliente"> Sobresaliente
+                        <input type="checkbox" name="tipo[]" value="sobresaliente" {{isset($tipo) && in_array('sobresaliente', $tipo) ? 'checked' : '' }}> Sobresaliente
                     </label>
                     <label>
-                        <input type="checkbox" name="tipo[]" value="economica"> Económica
+                        <input type="checkbox" name="tipo[]" value="economica" {{isset($tipo) && in_array('economica', $tipo) ? 'checked' : '' }}> Económica
                     </label>
                     <label>
-                        <input type="checkbox" name="tipo[]" value="investigacion"> Investigación
+                        <input type="checkbox" name="tipo[]" value="investigacion" {{isset($tipo) && in_array('investigacion', $tipo) ? 'checked' : '' }}> Investigación
                     </label>
                     <button type="submit" class="btn-filtrar">Filtrar</button>
                     <a href="{{ route('dashboard') }}" class="link-filtros">Restablecer filtros</a>
@@ -42,7 +44,18 @@
             <h2>Becas coincidentes:</h2>
             <br>
             @foreach ($becasFiltradas as $beca)
-                <p class="nombeca">{{ $beca->nombre }}</p>
+            <div class="forma">
+                <form action="{{route('favorito.store')}}" method="post">
+                    @csrf
+                    <button class="favorito" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 100 100">
+                            <polygon points="50 0 64 36 100 36 70 59 82 100 50 75 18 100 30 59 0 36 36 36" fill="yellow" stroke="black" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <input type="text" name="beca_id" value="{{$beca->id}}" hidden>
+                    <input type="text" name="user_id" value="{{Auth::user()->id}}" hidden>
+                </form>
+                <h2 class="nombeca"><b> {{$beca->nombre}}</b></h2>
                 @isset($beca->promedio)
                     <p class="texto">Promedio mínimo: {{$beca->promedio}}</p>
                 @endisset
@@ -63,6 +76,7 @@
                     <a class="textol" href="{{ $beca->enlace }}">Enlace a la página de inscripción</a>
                 @endisset
                 <br>
+            </div>
             @endforeach
         @else
             @php
@@ -72,10 +86,12 @@
                 @isset($beca)
                     <br>
                     <div class="forma">
-                        <a href="/{{$beca->id}}/edit" class="editar">
-                            <span class="pencil-icon">&#9998;</span>
-                        </a>
-                        <form action="/user/favs" method="post">
+                        @can('admin-only')
+                            <a href="/{{$beca->id}}/edit" class="editar">
+                                <span class="pencil-icon">&#9998;</span>
+                            </a>
+                        @endcan
+                        <form action="{{route('favorito.store')}}" method="post">
                             @csrf
                             <button class="favorito" type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 100 100">
@@ -102,10 +118,10 @@
                             <p class="texto">Carrera: {{$beca->carrera}}</p>
                         @endisset
                         <p class="texto"> {{$beca->descripcion}}</p>
-                    @endisset
-                    @isset($beca->enlace)
-                        <a class="textol" href="{{ $beca->enlace }}">Enlace a la página de inscripción</a>
-                    @endisset
+                        @endisset
+                        @isset($beca->enlace)
+                            <a class="textol" href="{{ $beca->enlace }}">Enlace a la página de inscripción</a>
+                        @endisset
                     </div>
 
                     <br>
@@ -113,7 +129,7 @@
             </div>
         @endif
 
-        <div class="py-12">
+        <div>
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <x-welcome />

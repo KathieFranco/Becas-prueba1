@@ -16,7 +16,7 @@
         </style>
     </head>
     <body class="fondo">
-        <div class=" min-h-screen bg-dots-darker bg-center bg-gray-100 selection:bg-red-500 selection:text-white">
+        <div>
             @if (Route::has('login'))
                 <div class="position: fixed z-index: 9999 sm:fixed sm:top-0 sm:right-0 p-6 text-right">
                     @auth
@@ -31,7 +31,7 @@
                 </div>
             @endif
             <link rel="stylesheet" href="{{ asset('estilo/estilobecasnoac.css') }}">
-            <div style="background-color: #f4f4f4; border-radius: 5px; padding: 10px; border-radius: 5px; margin-left: 8%; margin-top: 6% ">
+            <div style="border-radius: 5px; padding: 10px; border-radius: 5px; margin-left: 8%; margin-top: 6% ">
 
                 <div class="forma">
                 <h1 class="titulo">Becas disponibles</h1>

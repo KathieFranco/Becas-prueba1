@@ -92,10 +92,10 @@
     background-color: #183eeb;
   }
   
-  .checkbox-row input[type="checkbox"] {
+  /* .checkbox-row input[type="checkbox"] {
     display: none;
     
-  }
+  } 
   
   .checkbox-row label {
     display: inline-block;
@@ -139,7 +139,7 @@
   
   .checkbox-row input[type="checkbox"]:checked + label:after {
     display: block;
-  }
+  }*/
   
   /* estilobecas.css */
 

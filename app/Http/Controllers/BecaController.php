@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class BecaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
+        $this->middleware('can:admin-only')->only(['create', 'edit', 'show', 'delete']);
+    }
+
     public function filtrar(Request $request){
     
         $becas = Beca::all();
@@ -16,6 +22,7 @@ class BecaController extends Controller
         return view('dashboard')->with([
             'becasFiltradas' => $becasFiltradas,
             'tipo' => $tiposSeleccionados,
+            'becas' => $becas,
         ]);
     }
 

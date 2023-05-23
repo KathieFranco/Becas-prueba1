@@ -23,7 +23,7 @@ class FavoritoController extends Controller
         $id_becas = Favorito::select('beca_id')->where('user_id','=',$user_id)->distinct()->get()->pluck('beca_id')->toArray();
         $becas_favs = Beca::whereIn('id',$id_becas)->get();
 
-        return view('profile.favoritos')->with('becas_favs',$becas_favs);
+        return view('profile.favoritos', compact('becas_favs'));
     }
 
     /**
@@ -75,8 +75,11 @@ class FavoritoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Favorito $favorito)
+    public function destroy($id)
     {
-        //
+        $user_id = Auth::user()->id;
+        Favorito::where('user_id', $user_id)->where('beca_id', $id)->delete();
+
+        return redirect()->back()->with('message', 'Beca eliminada de favoritos');
     }
 }
