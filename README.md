@@ -20,4 +20,4 @@ Das en iniciar a Laragon
 Desde terminal ejecutas el comando 
 nmp run dev
 
-Y listo ya podras ver el proyecto!
+Y listo, ya podras ver el proyecto!
