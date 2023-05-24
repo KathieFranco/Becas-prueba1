@@ -17,7 +17,7 @@ DB_DATABASE: Becas
 
 Das en iniciar a Laragon
 
-Desde terminar ejecutas el comando 
+Desde terminal ejecutas el comando 
 nmp run dev
 
 Y listo ya podras ver el proyecto!
