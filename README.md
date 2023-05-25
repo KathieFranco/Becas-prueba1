@@ -18,6 +18,7 @@ DB_DATABASE: Becas
 Das en iniciar a Laragon
 
 Desde terminal ejecutas el comando 
-nmp run dev
+npm run dev 
+y si no lo tienes instalado ejecutas npm install y luego npm run dev
 
 Y listo, ya podras ver el proyecto!
